@@ -2,7 +2,7 @@ import "./App.css";
 import { decrement, increment } from "./redux/features/counterSlice";
 import { useAppDispatch, useAppSelector } from "./redux/hooks";
 import { RootState } from "./redux/store";
-
+import { Button } from "@/components/ui/button";
 function App() {
   const { count } = useAppSelector((state: RootState) => state.counter);
   const dispatch = useAppDispatch();
