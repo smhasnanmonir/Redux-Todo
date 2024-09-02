@@ -3,10 +3,17 @@ import { useAppSelector } from "@/redux/hooks";
 import AddToModal from "./AddToModal";
 import TodoCard from "./TodoCard";
 import TodoFilter from "./TodoFilter";
+import { useGetRandomUsersQuery } from "@/redux/api/api";
 
 const TodoContainer = () => {
   const { todos } = useAppSelector((state) => state.todos);
   console.log(todos);
+  const { data, isLoading, isError, isSuccess } =
+    useGetRandomUsersQuery(undefined);
+  console.log(data);
+  console.log(isLoading);
+  console.log(isError);
+  console.log(isSuccess);
   return (
     <div>
       <div className="flex space-x-3 py-3">
