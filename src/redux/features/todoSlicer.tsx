@@ -12,6 +12,10 @@ type TRemoveTodo = {
   id: string;
 };
 
+type TIsCompleted = {
+  id: string;
+};
+
 type TInitialState = {
   todos: TTodo[];
 };
@@ -30,9 +34,13 @@ const todoSlice = createSlice({
     removeTodo: (state, action: PayloadAction<TRemoveTodo>) => {
       state.todos = state.todos.filter((todo) => todo.id !== action.payload.id);
     },
+    toggleComplete: (state, action: PayloadAction<TIsCompleted>) => {
+      const task = state.todos.find((item) => item?.id === action?.payload?.id);
+      task!.isCompleted = !task?.isCompleted;
+    },
   },
 });
 
-export const { addTodo, removeTodo } = todoSlice.actions;
+export const { addTodo, removeTodo, toggleComplete } = todoSlice.actions;
 
 export default todoSlice.reducer;

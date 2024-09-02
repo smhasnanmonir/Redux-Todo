@@ -58,12 +58,12 @@ const AddToModal = () => {
                 />
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="username" className="text-right">
-                  Username
+                <Label htmlFor="Description" className="text-right">
+                  Description
                 </Label>
                 <Input
                   onBlur={(e) => setDescription(e.target.value)}
-                  id="username"
+                  id="Description"
                   defaultValue="@peduarte"
                   className="col-span-3"
                 />
